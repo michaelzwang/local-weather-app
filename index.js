@@ -1,6 +1,6 @@
 $(function(){
 
-  $('input[type="submit"]').click(function(){
+  $('.submit').click(function(){
     $('.icons').html('')
     var zip = $('#zip').val();
     var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?zip='+zip+',us&APPID=' + API_KEY;
