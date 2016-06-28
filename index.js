@@ -1,4 +1,5 @@
 $(function(){
+  $('.weather').hide();
 
   $('.submit').click(function(){
     $('.icons').html('')
@@ -16,13 +17,15 @@ $(function(){
         $('.icons').prepend('<img class="weather-icon" src=' + icon_url + ' />')
       }
       else {
-        var description = "";
+        var descriptions = [];
         var icons = []
         
         weather_data["weather"].forEach(get_descriptions);
         function get_descriptions(item) {
-          description = description + item["description"] + " "
+          descriptions.push(item["description"])
         };
+
+        var description = descriptions.join();
         
         weather_data["weather"].forEach(get_icons); 
         function get_icons(item) {
@@ -42,9 +45,11 @@ $(function(){
 
       $('.location').html(weather_data["name"]);
       $('.description').html(description);
-      $('.temperature').html(temperature_far);
+      $('.temperature').html(temperature_far + ' &#8457');
 
     });
+    $('.zipcode').fadeOut();
+    $('.weather').delay(600).fadeIn();
   });
 
 });

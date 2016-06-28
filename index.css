@@ -53,10 +53,33 @@ input[type="text"]:focus {
   border-radius: 5px;
   background-color: #8cb3d9;
   color: #e6e6e6;
+  letter-spacing: 2px;
 }
 
 .submit:hover {
   cursor: pointer;
   color: #e6e6e6;
   background-color: #0059b3;
+}
+
+.weather {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.location {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-weight: 300;
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+.icons img {
+  width: 80px;
 }
